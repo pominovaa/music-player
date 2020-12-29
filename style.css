@@ -131,3 +131,27 @@ h3 {
     left: 100px;
   }
 }
+
+/* volume */
+.volume-controls {
+  display: flex;
+  margin: 0 125px;
+}
+
+.volume-range {
+  background: rgb(241, 229, 61);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 14px -12px;
+  height: 4px;
+  width: 100%;
+  
+}
+
+.volume-bar {
+  background: #df8510;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
