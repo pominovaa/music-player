@@ -1,5 +1,5 @@
 /* Images created by: https://unsplash.com/@pawel_czerwinski */
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap");
 html {
   box-sizing: border-box;
 }
@@ -22,9 +22,7 @@ body {
   background: #ac2222;
   border-radius: 20px;
   box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.5);
-
 }
-
 
 .img-container {
   height: 300px;
@@ -34,11 +32,11 @@ body {
   left: 50px;
 }
 .img-container img {
-height: 100%;
-width: 100%;
-object-fit: cover;
-border-radius: 20px;
-box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -93,12 +91,10 @@ h3 {
   margin-right: 30px;
   cursor: pointer;
   user-select: none;
-
 }
 
 .fas:hover {
   filter: brightness(80%);
-  
 }
 
 .main-button {
@@ -111,7 +107,6 @@ h3 {
 @media screen and (max-width: 376px) {
   .player-container {
     width: 95vw;
-    
   }
 
   .img-container {
@@ -145,7 +140,6 @@ h3 {
   margin: 14px -12px;
   height: 4px;
   width: 100%;
-  
 }
 
 .volume-bar {
