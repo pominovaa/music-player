@@ -11,6 +11,7 @@ const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
 const volumeRange = document.getElementById('volume-range')
 const volumeBar = document.getElementById('volume-bar')
+const volumeIcon = document.getElementById('volume-icon')
 
 //music
 const songs = [
@@ -136,6 +137,9 @@ function setProgressBar(e) {
 
 // volume controls
 
+let lastVolume = 1;
+
+
 // volume bar
 function changeVolume(e) {
     let volume = e.offsetX / volumeRange.offsetWidth;
@@ -151,6 +155,45 @@ function changeVolume(e) {
     volumeBar.style.width = `${volume * 100}%`;
     music.volume = volume;
     console.log(volume);
+    // change i
+    volumeIcon.className = '';
+    if (volume > 0.7) {
+        volumeIcon.classList.add('fas', 'fa-volume-up');
+    }
+    else if (volume < 0.7 && volume > 0) {
+        volumeIcon.classList.add('fas', 'fa-volume-down');
+    }
+    else if (volume === 0) {
+        volumeIcon.classList.add('fas', 'fa-volume-mute');
+    }
+    lastVolume = volume;
+
+}
+
+// mute and no
+function toggleMute() {
+    if (music.volume) {
+        lastVolume = music.volume;
+        music.volume = 0;
+        volumeBar.style.width = 0;
+        volumeIcon.className = '';
+        volumeIcon.classList.add('fas', 'fa-volume-mute'); 
+    } 
+    else {
+        volumeIcon.className = '';
+        music.volume = lastVolume;
+        volumeBar.style.width = `${lastVolume * 100}%`;
+        if (lastVolume > 0.7) {
+            volumeIcon.classList.add('fas', 'fa-volume-up');
+        }
+        else if (lastVolume < 0.7 && lastVolume > 0) {
+            volumeIcon.classList.add('fas', 'fa-volume-down');
+        }
+        else if (lastVolume === 0) {
+            volumeIcon.classList.add('fas', 'fa-volume-mute');
+        }
+
+    }
 }
 
 
@@ -165,6 +208,7 @@ music.addEventListener('ended', nextSong)
 music.addEventListener('timeupdate', updateProgressBar);
 progressContainer.addEventListener('click', setProgressBar);
 volumeRange.addEventListener('click', changeVolume);
+volumeIcon.addEventListener('click', toggleMute)
 
 
 
